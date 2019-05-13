@@ -1,0 +1,42 @@
+<h1>Tacos!</h1>
+
+<h2>Tacos That Are Ready for Action</h2>
+
+<ul>
+
+    {{#each tacos}}
+    {{#unless devoured}}
+    <li>
+        {{taco_name}}
+        <button data-id="{{id}}" class="change-devoured" type="submit">Devour</button>
+    </li>
+    {{/unless}}
+    {{/each}}
+
+</ul>
+
+<h2>Tacos That Have Fallen Victim Due To Your Hunger</h2>
+
+<ul>
+
+    {{#each tacos}}
+    {{#if devoured}}
+    <li>
+        {{taco_name}}
+    </li>
+    {{/if}}
+    {{/each}}
+
+</ul>
+
+<h2>Name Your Taco Type</h2>
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="ca">Taco Name</label>
+        <input type="text" id="ca" name="name">
+    </div>
+
+
+    <button type="submit">Add Taco</button>
+</form>
