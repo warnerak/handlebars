@@ -1,17 +1,16 @@
 li {
-    padding: 5px;
-    margin: 5px;
     background: #faebd7;
+    color: black;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+
+  .bananatext {
+    font-family: garamond;
   }
   
   .label {
     font-weight: bold;
-  }
-  
-  .create-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
   }
   
   .form-group {

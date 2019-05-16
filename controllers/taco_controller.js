@@ -43,14 +43,19 @@ router.put("/api/tacos/:id", function (req, res) {
 });
 
 
-router.delete("/api/tacos:id", function (req, res) {
-    taco.delete([
-        "taco_name", "devoured"
-    ], [
-            req.body.taco_name, req.body.devoured
-        ], function (result) {
-            res.json({ id: result.insertId });
-        });
+router.delete("/api/tacos/:id", function (req, res) {
+    console.log("i am in controller.js");
+    var condition = "id = " + req.params.id;
+    console.log(condition);
+
+    taco.delete(condition, function (result) {
+        if (result.affectedRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
 });
 
 

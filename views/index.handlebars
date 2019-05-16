@@ -1,42 +1,96 @@
-<h1>Tacos!</h1>
-
-<h2>Tacos That Are Ready for Action</h2>
-
-<ul>
-
-    {{#each tacos}}
-    {{#unless devoured}}
-    <li>
-        {{taco_name}}
-        <button data-id="{{id}}" class="change-devoured" type="submit">Devour</button>
-    </li>
-    {{/unless}}
-    {{/each}}
-
-</ul>
-
-<h2>Tacos That Have Fallen Victim Due To Your Hunger</h2>
-
-<ul>
-
-    {{#each tacos}}
-    {{#if devoured}}
-    <li>
-        {{taco_name}}
-    </li>
-    {{/if}}
-    {{/each}}
-
-</ul>
-
-<h2>Name Your Taco Type</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="ca">Taco Name</label>
-        <input type="text" id="ca" name="name">
+<div class="jumbotron text-center m-0 p-3" style="background-color: transparent">
+    <div class="container p-0" style="width: 960px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="bananatext">
+                    <h1 class="text-center" style="background-color: grey; color: white">
+                        Banana's Tacos
+                    </h1>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="container-fluid" style="background-color: grey; width: 960px; color: white; font-family: garamond">
+
+        <div class="row">
+            <div class="col-sm-12 instructions mt-3 mb-3" style="font-family: garamond">
+                <h2>Menu Options</h2>
+            </div>
+        </div>
+        <div class="container-fluid justify-content-center" style="width: 480px">
+            <div class="row" style="width: 480px">
+                <div class="col-sm-6">
+                    <li>
+                        Shredded Chicken
+                    </li>
+                </div>
+                <div class="col-sm-6">
+                    <li>
+                        Pork Carnitas
+                    </li>
+                </div>
+            </div>
+            <div class="row" style="width: 480px">
+                <div class="col-sm-6">
+                    <li>
+                        Spicy Shrimp
+                    </li>
+                </div>
+                <div class="col-sm-6">
+                    <li>
+                        Grilled Steak
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 instructions mt-3 mb-3" style="font-family: garamond">
+                <h3>Choose a Taco from the Menu or Enter in A Taco of Your Own Creation!</h3>
+                <form class="create-form">
+
+                    <div class="form-group">
+                        <label for="ca">Taco Name</label>
+                        <input type="text" id="ca" name="name">
+                        <button type="submit">Add Order!</button>
+                    </div>
 
 
-    <button type="submit">Add Taco</button>
-</form>
+
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-sm-6 instructions mt-3 mb-3" style="font-family: Georgia, 'Times New Roman', Times, serif">
+                <h2>Order's Below Are Getting Prepared!</h2>
+                <ul>
+                    {{#each tacos}}
+                    {{#unless devoured}}
+                    <li>
+                        <h6>Order: #{{id}} {{taco_name}} <button data-id="{{id}}" class="change-devoured mt-2 mb-2"
+                                type="submit">Prepped!</button></h6>
+
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+
+                </ul>
+            </div>
+
+            <div class="col-sm-6 instructions mt-3 mb-3" style="font-family: Georgia, 'Times New Roman', Times, serif">
+                <h2>Tacos That Have Fallen Victim To Your Hunger</h2>
+                <ul>
+                    {{#each tacos}}
+                    {{#if devoured}}
+                    <li>
+                        <h6>Order: #{{id}} {{taco_name}} <button data-id="{{id}}" class="delete-taco mt-2 mb-2"
+                                type="submit">Eaten!</button></h6>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>

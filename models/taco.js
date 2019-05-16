@@ -16,6 +16,12 @@ var taco = {
         orm.update("tacos", objColVals, condition, function (res) {
             cb(res);
         });
+    },
+    delete: function (condition, cb) {
+        console.log(" i am in the taco.js");
+        orm.delete("tacos", condition, function (res) {
+            cb(res);
+        });
     }
 };
 
