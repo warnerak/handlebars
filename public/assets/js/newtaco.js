@@ -39,7 +39,6 @@ $(function () {
     });
 
     $(".delete-taco").on("click", function (event) {
-        console.log(" i am in the newtaco.js");
         var id = $(this).data("id");
         console.log(id);
         $.ajax("/api/tacos/" + id, {
