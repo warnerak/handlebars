@@ -17,5 +17,16 @@ connection.connect(function (err) {
     console.log("connected as id " + connection.threadId);
 });
 
+if (process.send.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: 'o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        user: 'vg4kofx3v5pg2ej7',
+        password: 'tpvjnlbamm0frlq3',
+        database: 'n0qsyx6ip8zngqoi'
+
+    })
+}
 
 module.exports = connection;
