@@ -1,12 +1,6 @@
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "N*ex7USt",
-    database: "taco_db"
-});
+var connection;
 
 
 connection.connect(function (err) {
@@ -21,10 +15,11 @@ if (process.send.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     connection = mysql.createConnection({
-        host: 'o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-        user: 'vg4kofx3v5pg2ej7',
-        password: 'tpvjnlbamm0frlq3',
-        database: 'n0qsyx6ip8zngqoi'
+        host: "localhost",
+        port: 3306,
+        user: "root",
+        password: "N*ex7USt",
+        database: "taco_db"
 
     })
 }
